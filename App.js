@@ -1,14 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, Image, Dimensions } from 'react-native';
 
 export default class App extends React.Component {
   render() {
+    const img = require('./src/assets/logo.png');
+    console.log(img);
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <SafeAreaView style={styles.container}>
+        <Image resizeMode="contain" style={{ width: Dimensions.get('window').width }} source={ require('./src/assets/logo.png') } />
+      </SafeAreaView>
     );
   }
 }
